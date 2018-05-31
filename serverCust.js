@@ -484,9 +484,9 @@ app.get('/model', (req, res) => {
 });
 
 module.exports = app;
-app.listen(3000, 'localhost', () => {
-  console.log('Server started at port 3000 successfully');
-});
-// app.listen(3000, '172.31.17.223', () => {
+// app.listen(3000, 'localhost', () => {
 //   console.log('Server started at port 3000 successfully');
 // });
+app.listen(3000, '172.31.17.223', () => {
+  console.log('Server started at port 3000 successfully');
+});

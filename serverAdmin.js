@@ -238,9 +238,9 @@ app.post('/register', (req,res) => {
 });
 
 module.exports = app;
-app.listen(4000, 'localhost', () => {
-  console.log('Server started at port 2000 successfully');
-});
-// app.listen(4000, '172.31.17.223', () => {
+// app.listen(4000, 'localhost', () => {
 //   console.log('Server started at port 2000 successfully');
 // });
+app.listen(4000, '172.31.17.223', () => {
+  console.log('Server started at port 2000 successfully');
+});
