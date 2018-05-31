@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=0">
+    <meta name="description" content="Test description">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0091AA">
+    <title>Customer Panel | Auto King</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="css/cust.css">
+  </head>
+  <body>
+    <header class="shdw2">
+      <div id="menuBtn">
+        <i class="fa fa-list fa-fw fa-lg"></i>
+      </div>
+      <a href="/"><img src="images/logo.png" alt="Autoking"><h1>AutoKing</h1></a>
+    </header>
+
+    <section id="sideNav">
+      <div class="user">
+        <div class="uimg">
+          <img src="images/default.png" alt="User">
+        </div>
+        <div class="uemail">
+          defaultuser@gmail.com
+        </div>
+        <div class="list">
+          <ul id="nav">
+            <li class="active" data-tab="#book"><i class="fa fa-car icon"></i>Book service</li>
+            <li data-tab="#upcomingServices"><i class="fa fa-list icon"></i>Upcoming Services</li>
+            <li data-tab="#pastServices"><i class="fa fa-list icon"></i>Past Services</li>
+            <li data-tab="#feedback"><i class="fa fa-paste icon"></i>Feedback</li>
+            <li data-tab="#faq"><i class="fa fa-question-circle icon"></i>FAQ</li>
+            <li data-tab="#contactUs"><i class="fa fa-phone icon"></i>Contact Us</li>
+            <li data-tab="#settings"><i class="fa fa-cog icon"></i>Settings</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <div class="tab active" id="book">
+        <h2 class="select">Select vehicle for the service</h2>
+        <div class="btnHlder">
+          <button type="button" id="addbtn" class="btn shdw1" name="button">+ Add New Vehicle</button>
+        </div>
+        <div class="cardHolder">
+          <a href="#"><div class="card shdw2">
+            <h2>HR02AA5393</h2>
+            <p>Honda Active 4g</p>
+          </div></a>
+          <a href="#"><div class="card shdw2">
+            <h2>HR02AA5393</h2>
+            <p>Honda Active 4g</p>
+          </div></a>
+          <a href="#"><div class="card shdw2">
+            <h2>HR02AA5393</h2>
+            <p>Honda Active 4g</p>
+          </div></a>
+          <a href="#"><div class="card shdw2">
+            <h2>HR02AA5393</h2>
+            <p>Honda Active 4g</p>
+          </div></a>
+        </div>
+      </div>
+
+      <div class="tab" id="pastServices">
+        <div class="list">
+          <div class="listItem shdw1">
+            <div class="veh">
+              HR02AA5393
+            </div>
+            <div class="date">
+              05/jan/2018
+            </div>
+            <i class="fa fa-chevron-down icon"></i>
+          </div>
+          <div class="listdetail shdw2">
+
+          </div>
+          <div class="listItem shdw1">
+            <div class="veh">
+              HR02AA5393
+            </div>
+            <div class="date">
+              05/jan/2018
+            </div>
+            <i class="fa fa-chevron-down icon"></i>
+          </div>
+          <div class="listdetail shdw2">
+
+          </div>
+          <div class="listItem shdw1">
+            <div class="veh">
+              HR02AA5393
+            </div>
+            <div class="date">
+              05/jan/2018
+            </div>
+            <i class="fa fa-chevron-down icon"></i>
+          </div>
+          <div class="listdetail shdw2">
+
+          </div>
+          <div class="listItem shdw1">
+            <div class="veh">
+              HR02AA5393
+            </div>
+            <div class="date">
+              05/jan/2018
+            </div>
+            <i class="fa fa-chevron-down icon"></i>
+          </div>
+          <div class="listdetail shdw2">
+
+          </div>
+
+          <div class="listItem shdw1">
+            <div class="veh">
+              HR02AA5393
+            </div>
+            <div class="date">
+              05/jan/2018
+            </div>
+            <i class="fa fa-chevron-down icon"></i>
+          </div>
+          <div class="listdetail shdw2">
+
+          </div>
+        </div>
+      </div>
+      <div class="tab" id="feedback">
+        <h2>Send Us your valuable feedback</h2>
+        <form class="feedback" method="post">
+          <textarea name="feedback" rows="8" cols="80"></textarea>
+          <br><input class="btn shdw1" type="submit" name="" value="Submit">
+        </form>
+      </div>
+      <div class="tab" id="faq">
+
+      </div>
+      <div class="tab" id="contactUs">
+
+      </div>
+      <div class="tab" id="settings">
+        <div class="card shdw2">
+          <h2></h2>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

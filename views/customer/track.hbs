@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Track Booking | Autoking</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#0091AA">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="css/track.css">
+  </head>
+  <body>
+    <header class="shdw2">
+      <h1>Track booking</h1>
+      <a href="tel:9992902923"><img src="images/phone.png" class="phn" alt="call"></a>
+      <a href="#chat"><img src="images/chat.png" id="chatOpen" class="phn" alt="call"></a>
+    </header>
+    <div class="details">
+      {{{confirmOtp}}}
+      <div class="track">
+        <h2>Vehicle Tracking</h2>
+        <div class="trackBar">
+          <div class="complete" style="width: {{track}}"></div><div style="left: {{track}}" class="trackball"></div>
+        </div>
+        <ul class="legend">
+          <li>Pickedup</li>
+          <li>Reached</li>
+          <li>Left service center</li>
+        </ul>
+      </div>
+      <!-- <div class="estimate">
+        <h2>Cost Estimation</h2>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Good Quality air filter</td>
+            <td>1200</td>
+          </tr>
+          <tr>
+            <td>Washing</td>
+            <td>120</td>
+          </tr>
+          <tr>
+            <td>Labour Charges</td>
+            <td>500</td>
+          </tr>
+          <tr class="total">
+            <td>Total</td>
+            <td>1820</td>
+          </tr>
+        </table>
+        <button type="button" name="approve">Approve estimate</button>
+      </div> -->
+      <h2>Booking Number</h2>
+      <p>{{bookingno}}</p>
+      <h2>Service Provider</h2>
+      <p>{{sp}}</p>
+      <h2>Vehicle</h2>
+      <p>{{veh}}</p>
+      <h2>Services requested</h2>
+      <ul>
+        {{{reqser}}}
+      </ul>
+      <button type="button" class="cancel" id="cancel" name="cancel">Cancel Booking</button>
+    </div>
+
+
+    <section id="chat">
+      <div class="head">
+        <div id="close">X</div>
+        <h2>Autoportal Service center</h2>
+      </div>
+      <div class="msgContainer">
+        <div class="msg">
+          <div class="msg-in msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-in msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+
+        <div class="msg">
+          <div class="msg-in msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+
+        <div class="msg">
+          <div class="msg-in msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+
+        <div class="msg">
+          <div class="msg-in msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+
+        <div class="msg">
+          <div class="msg-in msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="msg-out msgBox">
+            <p>The Message </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="send">
+        <form id="sendForm" method="post">
+          <input type="text" placeholder="Type a message">
+          <div class="imgBtncontainer">
+            <input type="file" id="imgInput" accept="image/*" name="" value="">
+          </div>
+          <div class="submitContainer">
+            <input type="submit">
+          </div>
+        </form>
+      </div>
+    </section>
+    <script type="text/javascript">
+      [
+        'js/jquery.js',
+        'js/track.js',
+      ].forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        document.head.appendChild(script);
+      });
+    </script>
+  </body>
+</html>

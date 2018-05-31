@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Service Providers | Autoking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#0091AA">
+
+    <!-- stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <link rel="stylesheet" href="/css/list.css">
+  </head>
+  <body>
+    <header class="shdw3">
+      <div id="menuBtn">
+        <i class="fa fa-list fa-fw fa-lg"></i>
+      </div>
+      <div class="logo">
+        <a href="/" id="home"><img src="images/logo.png" alt="Autoking"><h1>AutoKing</h1></a>
+      </div>
+      <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/book">Book a service</a>
+        <div class="dropdown">
+          <button class="dropbtn">Roadside Assistance
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <a href="/career">Career</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </header>
+    <section id="mobileNav">
+      <div id="close">
+        X
+      </div>
+      <div class="head">
+        Filters
+      </div>
+      <form action="/filter" method="get">
+
+      <div class="filter">
+        <label for="text">Location</label>
+        <input type="text" id="autocomplete" name="loc" value="">
+        <input type="hidden" name="lat" id="lat">
+        <input type="hidden" name="lng" id="lng">
+      </div>
+      <div class="filter">
+        <label for="text">Pick and Drop</label>
+        <input type="radio" name="pnd" value="1">Yes
+        <input type="radio" name="pnd" value="0">No
+      </div>
+      <div class="btnholder">
+        <button type="submit" name="button">Apply Filters</button>
+      </div>
+    </form>
+    </section>
+    <section id="sideNav" class="shdw2">
+      <div class="head">
+        Filters
+      </div>
+      <form action="/filter" method="get">
+
+      <div class="filter">
+        <label for="text">Location</label>
+        <input type="text" id="autocomplete" name="loc" value="">
+        <input type="hidden" name="lat" id="lat">
+        <input type="hidden" name="lng" id="lng">
+      </div>
+      <div class="filter">
+        <label for="text">Pick and Drop</label>
+        <input type="radio" name="pnd" value="1">Yes
+        <input type="radio" name="pnd" value="0">No
+      </div>
+      <div class="btnholder">
+        <button type="submit" name="button">Apply Filters</button>
+      </div>
+    </form>
+    </section>
+    <section id="ctholder">
+      {{{spList}}}
+
+      <!-- <div class="card shdw1">
+        <img src="images/default.png" alt="Service center Name">
+        <div class="info">
+          <h2>Name of Service center</h2>
+          <p>Address of the service center</p>
+          <div class="rating">
+            <div class="greystars">
+            </div>
+            <div class="filledstars" style="width:70%">
+            </div>
+          </div>
+          <div class="distance">
+            3.5km
+          </div>
+        </div>
+      </div>
+      <div class="card shdw1"></div>
+      <div class="card shdw1"></div>
+      <div class="card shdw1"></div>
+      <div class="card shdw1"></div> -->
+    </section>
+    <footer></footer>
+
+
+    <script>
+
+      window.onload = function () {
+        geolocate();
+      };
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        document.getElementById('lat').value = place.geometry.location.lat();
+        document.getElementById('lng').value = place.geometry.location.lng();
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52vsCwIzK60_2OO-IFEkdV2e4ILmlob4&libraries=places&callback=initAutocomplete"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+      $("#menuBtn").click(function () {
+        $("#mobileNav").addClass('active');
+      });
+      $("#close").click(function () {
+        $("#mobileNav").removeClass('active');
+      });
+    </script>
+  </body>
+</html>

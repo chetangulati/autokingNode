@@ -1,0 +1,161 @@
+{
+  "4wheelers" : {
+    "Maruti Suzuki":[{
+      "model": "Swift",
+      "fuels":["petrol", "diesel"],
+      "year":["2009","2013","2018"],
+      "automatic":"0"
+    },
+    {
+      "model": "Baleno",
+      "fuels":["petrol", "diesel"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "Alto 800",
+      "fuels":["petrol"],
+      "year":["2016"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "Celerio",
+      "fuels":["petrol"],
+      "year":["2015"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "Vitara brezza",
+      "fuels":[ "diesel"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "Ignis",
+      "fuels":["petrol", "diesel"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "Ciaz",
+      "fuels":["petrol", "diesel", "hybrid"],
+      "year":["2016"],
+      "automatic": "1"
+    },
+    ],
+    "Hyundai": [{
+      "model": "Creta",
+      "fuels":["petrol", "diesel"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "i10",
+      "fuels":["petrol"],
+      "year":["2012"],
+      "automatic": "0"
+    },
+    {
+      "model": "i20",
+      "fuels":["petrol", "diesel"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    {
+      "model": "verna",
+      "fuels":["petrol", "diesel"],
+      "year":["2016"],
+      "automatic": "0"
+    },
+    ],
+    "Honda": [{
+      "model": "City",
+      "fuels":["petrol", "diesel"],
+      "year":["2015"],
+      "automatic": "0"
+    },
+    {
+      "model": "Jazz",
+      "fuels":["petrol", "diesel"],
+      "year":["2015"],
+      "automatic": "0"
+    },
+    {
+      "model": "Civic",
+      "fuels":["petrol", "diesel"],
+      "year":["2015"],
+      "automatic": "0"
+    },
+    ],
+    "Chevolet":[
+      {
+        "model": "Beat",
+        "fuels":["petrol", "diesel"],
+        "year":["2015"],
+        "automatic":"0"
+      },
+      {
+        "model":"cruze",
+        "fuels":["petrol", "diesel"],
+        "year":["2015"],
+        "automatic":"1"
+      },
+      {
+        "model":"Enjoy",
+        "fuels":["petrol", "diesel"],
+        "year":["2015"],
+        "automatic": "0"
+      }
+    ],
+  },
+  "2wheelers": {
+    "Honda":[
+      {
+        "model":"Activa",
+        "fuels":["petrol"],
+        "year":["2015"],
+        "automatic":"1"
+      },
+      {
+        "model":"Livo",
+        "fuels":["petrol"],
+        "year":["2016"],
+        "automatic":"0"
+      }
+      {
+        "model":"CBR 250R",
+        "fuels":["petrol"],
+        "year":["2016"],
+        "automatic":"0"
+      }
+      {
+        "model":"Aviator",
+        "fuels":["petrol"],
+        "year":["2015"],
+        "automatic": "1"
+      }
+    ],
+    "Hero":[
+      {
+        "model":"Splendor",
+        "fuels":["petrol"],
+        "year":["2011"],
+        "automatic":"0"
+      },
+      {
+        "model":"Xtreme",
+        "fuels":["petrol"],
+        "year":["2011"],
+        "automatic":"0"
+      },
+      {
+        "model":"Super Splendor",
+        "fuels":["petrol"],
+        "year":["2011"],
+        "automatic":"0"
+      },
+    ]
+  }
+}

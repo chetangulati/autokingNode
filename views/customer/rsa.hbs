@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Auto King</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=0">
+    <meta name="description" content="Test description">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0091AA">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
+
+    <!-- Plugins -->
+     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="pcHead">
+        <a href="/"><img src="images/logo.png" id="logo" alt="Auto King"></a>
+        <div id="logoCt"></div>
+        <div id="a" class="shdw3"></div>
+        <div id="b" class="shdw3"></div>
+        <div id="menu" class="shdw3">
+          <div class="upper">
+            <input type="text" class="shdw2" name="q" id="autocomplete" placeholder="Enter your location">
+            <div class="loginCart">
+              {{{loggedIn}}}
+            </div>
+          </div>
+          <div class="lower">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/book">Book</a></li>
+              <li><a href="/rsa">Roadside Assistance</a></li>
+              <li><a href="https://service.autoking.in/register">Become a partner</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/contact">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="menuBtn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- PC head ends here -->
+
+      <div class="mobHead">
+        <div class="menuBtn">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="logo">
+          <a href="/"><img src="images/logo.png" alt="Auto King"></a>
+        </div>
+        <div class="vline"></div>
+        <div class="search">
+          <i class="fa fa-search fa-lg"></i>
+        </div>
+        <div class="vline"></div>
+        <a href="login" class="lgn">Login & Signup</a>
+      </div>
+
+      <!-- Mob head ends here  -->
+    </header>
+
+    <div id="filterSideNav"></div>
+    <section id="sideNav">
+
+      <div class="userArea">
+        <div class="userImg">
+          <img src="images/default.png" alt="User">
+        </div>
+        <div class="email">
+          default@autoking.in
+        </div>
+      </div>
+      <div class="container">
+        <ul>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/">Home</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/book">Book a service</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/rsa">Roadside Assistance</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/about">About Us</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/contact">Contact Us</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="https://service.autoking.in">Become a partner</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- Side nav ends here  -->
+
+    <section id="banner" class="rsa">
+      <h1 class="rsa">Roadside Assistance</h1>
+      <div class="ct">
+        <form class="rsaForm" action="rsa" method="post">
+          <p>Select type of vehicle</p>
+          <div class="form-radio">
+            <div class="radio">
+              <label>
+                <input type="radio" value="2" name="type" /><i class="helper"></i>2 - wheeler
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="suv" name="type" /><i class="helper"></i>SUV
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="minisuv" name="type" /><i class="helper"></i>Mini SUV
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="hatchback" name="type" /><i class="helper"></i>Hatchback
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="crossover" name="type" /><i class="helper"></i>Crossover
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="sedan" name="type" /><i class="helper"></i>Sedan
+              </label>
+            </div>
+          </div>
+          <p>Select the rsa service</p>
+          <div class="form-radio">
+            <div class="radio">
+              <label>
+                <input type="radio" value="fuel" name="rsa" /><i class="helper"></i>Fuel Delivery
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="tow" name="rsa" /><i class="helper"></i>Towing
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="battery" name="rsa" /><i class="helper"></i>Battery Jumpstart
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" value="lockout" name="rsa" /><i class="helper"></i>Key Lockout
+              </label>
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="button" type="submit"><span>Submit</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+        <footer>
+          <div class="upperfooter">
+            <div class="social">
+              <h3>Social</h3>
+              <ul>
+                <div class="lineone">
+                  <li><a href="#"><img src="images/png/facebook.png" alt="Facebook"></a></li>
+                  <li><a href="#"><img src="images/png/twitter.png" alt="twitter"></a></li>
+                  <li><a href="#"><img src="images/png/youtube.png" alt="youtube"></a></li>
+                </div>
+                <div class="linetwo">
+                  <li><a href="#"><img src="images/png/google-plus.png" alt="Google Plus"></a></li>
+                  <li><a href="#"><img src="images/png/instagram.png" alt="instagrasm"></a></li>
+                  <li><a href="#"><img src="images/png/pinterest.png" alt="Pinterest"></a></li>
+                </div>
+              </ul>
+            </div>
+            <div class="links">
+              <h3>Links</h3>
+              <ul>
+                <li><a href="/about" target="_blank">About Us</a></li>
+                <li><a href="/contact" target="_blank">Contact Us</a></li>
+                <li><a href="/terms" target="_blank">Terms and Conditions</a></li>
+                <li><a href="https://serice.autoking.in/register" target="_blank">Become a partner</a></li>
+              </ul>
+            </div>
+            <div class="contact">
+              <h3>Contact Us</h3>
+              <div class="wrap">
+                <h4>Email</h4>
+                <a href="mailto:contactus@autoking.com">contactus@autoking.com</a>
+              </div>
+            </div>
+            <div class="newsletter">
+              <h3>News Letter</h3>
+              <form class="news" action="index.html" method="post">
+                <input type="text" name="nemail" placeholder="E-Mail">
+                <input type="submit" value="Subscribe">
+              </form>
+              <p>Subscribe to newsletter for getting latest updates and offers</p>
+            </div>
+          </div>
+          <div class="lowerfooter">
+            Copyright (c) 2018 Auners Softwares Private Limited All Rights Reserved.
+          </div>
+        </footer>
+
+        <script type="text/javascript">
+    [
+      'js/jquery.js',
+      'https://use.fontawesome.com/1fd731ec68.js',
+      'js/main.js',
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyC52vsCwIzK60_2OO-IFEkdV2e4ILmlob4&libraries=places&callback=initAutocomplete',
+    ].forEach(function(src) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.async = false;
+      document.head.appendChild(script);
+    });
+    </script>
+  </body>
+</html>

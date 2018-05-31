@@ -1,0 +1,85 @@
+<div id="one" class="active">
+  <form enctype="multipart/form-data" id="formOne" name="formOne" action="/register/one" method="post">
+    <div class="left">
+      <h2>Personal Details</h2>
+      <div class="form-group">
+        <input type="text" name="name" required="required"/>
+        <label class="control-label" for="name">Owner's Name</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <input type="tel" name="mno" data-inp="number" maxlength="10" minlength="10" required="required"/>
+        <label class="control-label" for="mno">Mobile Number</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" required="required"/>
+        <label class="control-label" for="mno">E-mail ID</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" required="required"/>
+        <label class="control-label" for="mno">Password</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <input type="text" name="adhaar" data-inp="number" minlength="12" maxlength="12" required="required"/>
+        <label class="control-label" for="adhaar">Owner's Adhaar Card Number</label><i class="bar"></i>
+      </div>
+        <label for="adhaarpic">Owner's Adhaar card Image</label>
+        <input type="file" name="adhaarpic" accept="image/*" required="required"/>
+      <div class="button-container">
+        <button class="button" id="loc" type="button" name="button"><span>Select service center location</span></button>
+        <input type="hidden" id="lat" required name="lat">
+        <input type="hidden" id="lng" required name="lng">
+      </div>
+    </div>
+    <div class="right">
+      <h2>Service Center Details</h2>
+      <div class="form-group">
+        <input type="text" name="scname" required="required"/>
+        <label class="control-label" for="scname">Service Center Name</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <textarea name="address"></textarea>
+        <label class="control-label" for="scname">Service Center address</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <h3>We provide service for</h3>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="1" name="twowheeler"/><i class="helper"></i>2 - wheelers
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="1" name="fourwheeler"/><i class="helper"></i>4 - wheelers
+          </label>
+        </div>
+      </div>
+      <div class="form-radio">
+        <div class="radio">
+          <label>
+            <input type="radio" value="1" name="pickndrop"/><i class="helper"></i>Yes, We provide pick and drop service
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" value="0" name="pickndrop"/><i class="helper"></i>No, We don't provide pick and drop service
+          </label>
+        </div>
+      </div>
+      <div class="form-radio">
+        <div class="radio">
+          <label>
+            <input type="radio" value="1" name="rsa"/><i class="helper"></i>Yes, We provide Roadside Assistance Service (RSA)
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" value="0" name="rsa"/><i class="helper"></i>No, We don't provide Roadside Assistance Service (RSA)
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button id="otpSend" class="button" name="button"><span>Next</span></button>
+    </div>
+  </form>
+</div>

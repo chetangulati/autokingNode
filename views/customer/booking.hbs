@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Booking | Autoking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#0091AA">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="js/datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- plugins -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">
+      <div id="percline"></div>
+      <div class="back">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+          <div class="mapModal">
+            <div class="modalHead">
+              <div class="close">
+                x
+              </div>
+              <h2>Click on the map to select the exact location</h2>
+            </div>
+            <div class="modalBody">
+              <div id="map"></div>
+            </div>
+          </div>
+
+      <form action="/list" id="bookingForm" method="get">
+        <div id="one" class="step active">
+          <div class="top">
+            <h2>Vehicle Details</h2>
+          </div>
+
+          <div class="formcontainer">
+            <div class="form-group">
+              <p>Vehicle Type</p>
+              <div class="form-radio">
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="2" class="feecal req" name="vehicleType"/><i class="helper"></i>2 - Wheeler
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="4" class="feecal req" data-req="required" name="vehicleType"/><i class="helper"></i>4 - Wheeler
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button class="button stepbtn" id="btnone" data-href="#two" data-step="#one" data-perc="40%" type="button"><span>Next &rarr;</span></button>
+          </div>
+        </div>
+        <div id="two" class="step">
+          <div class="top">
+            <h2>About Vehicle</h2>
+          </div>
+          <div class="form-group">
+            <input type="text" autocomplete="off" id="brand" name="brand" class="req" maxlength="60"/>
+            <label class="control-label">Vehicle Brand</label><i class="bar"></i>
+            <div class="autoComplete shdw2" id="brands">
+              <ul>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" autocomplete="off" id="model" name="model" class="req" maxlength="60"/>
+            <label class="control-label">Vehicle Model</label><i class="bar"></i>
+            <div class="autoComplete shdw2" id="models">
+              <ul>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="req" name="fuel">
+              <option selected="selected" disabled>Select Fuel type</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Petrol">Diesel</option>
+              <option value="Petrol">Hybrid</option>
+              <option value="Petrol">Electric</option>
+              <option value="Petrol">CNG</option>
+              <option value="Petrol">Octane 97</option>
+            </select>
+            <label class="control-label">Fuel Type</label><i class="bar"></i>
+          </div>
+          <div class="button-container">
+            <input type="hidden" name="lat" id="lat" class="req"/>
+            <input type="hidden" name="lng" id="lng" class="req"/>
+            <button type="button" class="button" id="loc" name="button"><span>Select Location</span></button>
+          </div>
+          <div class="button-container">
+            <button class="button stepbtn" id="btntwo" data-step="#two" data-href="#three" data-perc="60%" type="button"><span>Next &rarr;</span></button>
+          </div>
+        </div>
+        <div id="three" class="step">
+          <div class="top">
+            <h2>Services To be done</h2>
+          </div>
+        <div class="form-group">
+          <p>Select services to be made in your vehicle</p>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="1" name="service" /><i class="helper"></i>General Service
+            </label>
+            <label>
+              <input type="checkbox" value="2" name="service" /><i class="helper"></i>Oil Change
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="3"><i class="helper"></i>Complete Breakdown
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="4"><i class="helper"></i>Clutch and Brakes Issue
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="5"><i class="helper"></i>Electrical Issue
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="6"><i class="helper"></i>Filter change
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="7"><i class="helper"></i>Re-Painting/Scratch Removal
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="8"><i class="helper"></i>Tyre Puncture/Replacement
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="9"><i class="helper"></i>Parts Change
+            </label>
+            <label>
+              <input type="checkbox" name="service" value="9"><i class="helper"></i>Other
+            </label>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="button" disabled id="submit" type="submit"><span>Show service centers</span></button>
+        </div>
+        </div>
+        <!--<div id="four" class="step">
+          <div class="top">
+            <h2>Location</h2>
+          </div>
+           <div class="form-group">
+            <input type="text" name="date" class="req" data-provide="datepicker"/>
+            <label class="control-label">Schedule Date</label><i class="bar"></i>
+          </div>
+          <div class="batch-label-container">
+            <label class="batch-label">Select Time</label>
+            <div class="batch-time">
+              <span id="start-time"></span>
+              <span> - </span>
+              <span id="end-time"></span>
+            </div>
+          </div>
+          <div id="time-slider"></div>
+          <div class="button-container">
+            <button class="button stepbtn" data-step="#four" data-href="#five" data-perc="100%" type="button"><span>Next &rarr;</span></button>
+          </div>
+        </div>
+       <div id="five" class="step">
+          <div class="top">
+            <h2>Confirm your details</h2>
+          </div>
+          <div class="form-group">
+            <a href="/login?">Login to use pre saved details</a>
+          </div>
+          <div class="form-group">
+            <input type="tel" data-inp="number" name="mobile" class="req"/>
+            <label class="control-label">Mobile Number</label><i class="bar"></i>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" class="req"/>
+            <label class="control-label">E-Mail</label><i class="bar"></i>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="agree" name="terms" class="req"/><i class="helper"></i>Accept <a href="#" target="_blank">Terms and Conditions</a>
+            </label>
+          </div>
+          <div class="button-container">
+            <button class="button stepbtn" data-step="#five" data-href="#six" data-perc="100%" type="button"><span>Next &rarr;</span></button>
+          </div>
+        </div>
+        <div id="six" class="step">
+          <div class="top">
+            <h2>Verify its you</h2>
+          </div>
+          <div class="form-group">
+            <input type="tel" data-inp="number" autocomplete="off" name="mobile" class="req"/>
+            <label class="control-label">OTP</label><i class="bar"></i>
+          </div>
+          <a href="#">Resend OTP</a>
+        </div> -->
+      </form>
+    </div>
+    <script type="text/javascript">
+      [
+        '/js/jquery.js',
+        '/js/nouislider.min.js',
+        'js/datepicker/js/bootstrap-datepicker.min.js',
+        '/js/booking.js',
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyC52vsCwIzK60_2OO-IFEkdV2e4ILmlob4&callback=initMap',
+      ].forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        script.defer = true;
+        document.head.appendChild(script);
+      });
+    </script>
+  </body>
+</html>

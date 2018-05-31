@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Service Providers | Autoking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#0091AA">
+
+    <!-- stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sp.css">
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="js/datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/1fd731ec68.js"></script>
+  </head>
+  <body>
+    <header class="shdw3">
+      <div id="menuBtn">
+        <i class="fa fa-list fa-fw fa-lg"></i>
+      </div>
+      <div class="logo">
+        <a href="/" id="home"><img src="images/logo.png" alt="Autoking"><h1>AutoKing</h1></a>
+      </div>
+      <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/book">Book a service</a>
+        <div class="dropdown">
+          <button class="dropbtn">Roadside Assistance
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <a href="/career">Career</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </header>
+    <div class="mapFilter"></div>
+    <div class="mapModal">
+      <div class="modalHead">
+        <div class="close">
+          x
+        </div>
+        <h2>Complete Booking</h2>
+      </div>
+      <div class="modalBody">
+      <div class="back">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+        <form id="bookingForm">
+          <div id="four" class="step active">
+            <div class="top">
+              <h2>Schedule Booking</h2>
+            </div>
+            <div class="form-group">
+              <input type="text" name="date" class="req" data-provide="datepicker"/>
+              <label class="control-label">Schedule Date</label><i class="bar"></i>
+            </div>
+            <div class="batch-label-container">
+              <label class="batch-label">Select Time</label>
+              <div class="batch-time">
+                <span id="start-time"></span>
+                <span> - </span>
+                <span id="end-time"></span>
+              </div>
+            </div>
+            <div id="time-slider"></div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=true name="pnd" class="req"/><i class="helper"></i>Pick and drop service required (*Extra charges applicable for this service)</a>
+              </label>
+            </div>
+            <div class="button-container">
+              <button class="button stepbtn" id="one" data-step="#four" data-href="#five" data-perc="100%" type="button"><span>Next &rarr;</span></button>
+            </div>
+          </div>
+          <div id="five" class="step">
+            <div class="top">
+              <h2>Confirm your details</h2>
+            </div>
+            <div class="form-group">
+              <input type="tel" data-inp="number" value="{{{umob}}}" name="mobile" class="req"/>
+              <label class="control-label">Mobile Number</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" value="{{{uemail}}}" class="req"/>
+              <label class="control-label">E-Mail</label><i class="bar"></i>
+            </div>
+            <div class="form-group" id="pnda">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="agree" name="terms" class="req"/><i class="helper"></i>Accept <a href="#" target="_blank">Terms and Conditions</a>
+              </label>
+            </div>
+            <div class="button-container">
+              <button class="button stepbtn" id="otpbtn" data-step="#five" data-href="#six" data-perc="100%" type="button"><span>Next &rarr;</span></button>
+            </div>
+          </div>
+          <div id="six" class="step">
+            <div class="top">
+              <h2>Verify its you</h2>
+            </div>
+            <div class="form-group">
+              <input type="tel" data-inp="number" autocomplete="off" name="bookotp" class="req"/>
+              <label class="control-label">OTP</label><i class="bar"></i>
+            </div>
+            <a href="#">Resend OTP</a>
+            <div class="button-container">
+              <button type="submit" class="button" name="button"><span>Complete Booking</span></button>
+            </div>
+          </div>
+        </div>
+        </form>
+    </div>
+    <section id="mobileNav">
+      <div id="close">
+        X
+      </div>
+      <div class="head">
+        Filters
+      </div>
+      <form action="/filter" method="get">
+
+      <div class="filter">
+        <label for="text">Location</label>
+        <input type="text" id="autocomplete" name="loc" value="">
+        <input type="hidden" name="lat" id="lat">
+        <input type="hidden" name="lng" id="lng">
+      </div>
+      <div class="filter">
+        <label for="text">Pick and Drop</label>
+        <input type="radio" name="pnd" value="1">Yes
+        <input type="radio" name="pnd" value="0">No
+      </div>
+      <div class="btnholder">
+        <button type="submit" name="button">Apply Filters</button>
+      </div>
+    </form>
+    </section>
+    <section id="ctholder">
+      <div id="left" class="shdw2">
+        <div class="img">
+          <img src="images/chd.jpeg" alt="">
+        </div>
+        <div class="details">
+          <h2>{{{name}}}</h2>
+          <p>{{{address}}}</p>
+          <div class="rating">
+            <div class="greystars">
+            </div>
+            <div class="filledstars" style="{{{rating}}}">
+            </div>
+          </div>
+          <div class="revno">
+            ({{{ratingCount}}} reviews)
+          </div>
+          <div class="pnd">
+            {{{pnd}}}
+          </div>
+          <div class="button-container">
+            <button class="button" id="book" type="submit"><span>Book Now</span></button>
+          </div>
+        </div>
+        <h2 class="veh">{{{veh}}}</h2>
+        <p>*Prices shown are approximate. Final prices may vary depending on the services done</p>
+        {{{prices}}}
+        <section id="comments">
+              <div id="reviews">
+                      <div id="rate">
+                  <h2>Rate the Service Provider</h2>
+                  <fieldset class="rating">
+                    <input id="star5" name="rating" value="5" type="radio"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                    <input id="star4" name="rating" value="4" type="radio"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input id="star3" name="rating" value="3" type="radio"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                    <input id="star2" name="rating" value="2" type="radio"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input id="star1" name="rating" value="1" type="radio"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input name="user" value="32" type="hidden">
+                  </fieldset>
+                </div>                      <div id="postreview">
+                          <h2>Review the Service Provider</h2>
+                          <form action="includes/postrev.php" method="post">
+                            <textarea name="review" placeholder="Optional"></textarea>
+                            <input name="user" value="32" type="hidden">
+                            <input name="ad" value="48" type="hidden">
+                            <input value="Submit Review" type="submit">
+                        </form>
+                        </div>          <h3>User reviews</h3>
+                  <div id="postedreviews">
+                    <div class="ureview">
+                      <div class="revimg">
+                        <img src="images/default.png" alt="user">
+                        <div class="revname">
+                          User123
+                        </div>
+                      </div>
+                      <div class="revct">
+                        Bkjsdhdfjhvb dfhdjfhfj fhdjsdjk sdjkfh fherjkfhkejgh erherjhgb erjhgb erjhgberjhge rjhberjhg berjh g
+                      </div>
+                    </div>
+                </div>
+            </section>
+      </div>
+      <!-- <div id="right" class="shdw2">
+        <div class="head">
+          Book Now
+        </div>
+        <div class="book">
+            <div class="button-container">
+              <button class="button" id="book" type="submit"><span>Book Now</span></button>
+            </div>
+        </div>
+      </div> -->
+    </section>
+    <footer></footer>
+
+    <script type="text/javascript">
+      [
+        '/js/jquery.js',
+        'js/datepicker/js/bootstrap-datepicker.min.js',
+        '/js/nouislider.min.js',
+        '/js/sp.js',
+      ].forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        script.defer = true;
+        document.head.appendChild(script);
+      });
+    </script>
+  </body>
+</html>

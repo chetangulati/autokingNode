@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#0091AA">
+    <title>Service Provider Portal | Auto King</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="css/service.css">
+  </head>
+  <body>
+    <!-- <div class="filter"></div> -->
+    {{{approved}}}
+    <section id="sideNav">
+      <h1>Service Provider</h1>
+      <div class="user">
+        <img src="images/default.png" alt="User">
+      </div>
+      <div class="userName">
+        {{name}} <br>
+        <div class="userRating">
+          {{rating}}
+        </div>
+      </div>
+      <div class="mobvm">
+        <div class="vacationMode">
+          <div class="slide"></div>
+        </div>
+
+        <div class="txt">
+          Vacation Mode
+        </div>
+      </div>
+      <div id="vslide"></div>
+      <ul>
+        <li class="active" data-tab="#book"><i class="fa fa-fw fa-lg fa-car"></i>Bookings</li>
+        <li data-tab="#slots"><i class="fa fa-fw fa-lg fa-list"></i>Slots</li>
+        <li data-tab="#services"><i class="fa fa-fw fa-lg fa-address-book"></i>My Services</li>
+        <li data-tab="#analytics"><i class="fa fa-fw fa-lg fa-area-chart"></i>Analytics</li>
+        <li data-tab="#mkt"><i class="fa fa-fw fa-lg fa-signal"></i>Marketing</li>
+        <li data-tab="#accounts"><i class="fa fa-fw fa-lg fa-inr"></i>Accounts</li>
+        <li data-tab="#reviews"><i class="fa fa-fw fa-lg fa-star"></i>Reviews</li>
+        <li data-tab="#profile"><i class="fa fa-fw fa-lg fa-user"></i>Profile</li>
+        <li data-tab="#notifications"><i class="fa fa-fw fa-lg fa-bell"></i>Notifications</li>
+        <li data-tab="#tips"><i class="fa fa-fw fa-lg fa-comment"></i>Tips</li>
+        <li data-tab="#contact"><i class="fa fa-fw fa-lg fa-phone"></i>Contact Us</li>
+        <a href="/logout"><li><i class="fa fa-fw fa-lg fa-sign-out"></i>Logout</li></a>
+      </ul>
+    </section>
+
+
+    <section id="mobNav">
+      <div class="menuBtn">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <h1>Service Provider Panel</h1>
+    </section>
+
+
+
+    <section id="content">
+      <div class="srch">
+        <i class="fa fa-lg fa-search"></i><input autocomplete="off" placeholder="Search for booking number" type="text" name="q" id="q">
+        <div class="vm">
+          <div class="vacationMode">
+            <div class="slide"></div>
+          </div>
+
+          <div class="txt">
+            Vacation Mode
+          </div>
+        </div>
+
+      </div>
+
+      <div id="book" class="tab active">
+
+        <div class="openBookings">
+          <h3>Open Bookings</h3>
+          <div class="bookings">
+            {{{open}}}
+            <!-- <a href="/1005464">
+            <div class="bookCard">
+              <div class="bookingId">
+                1005464
+              </div>
+              <div class="bookingDateAndTime">
+                12/02/2018 - 12:30PM
+              </div>
+            </div>
+            </a> -->
+          </div>
+        </div>
+        <div class="closedBookings">
+          <h3>Closed Bookings</h3>
+          <div class="bookings">
+            {{{closed}}}
+          </div>
+        </div>
+      </div>
+      <!-- Booking Ends here -->
+
+      <div class="tab" id="slots">
+        <h2>Slots</h2>
+        <p>Info about slots</p>
+        <div class="content">
+          <div class="slotSlider">
+            <div class="sliderHead">
+              Add a new slot
+            </div>
+            <div class="slot-time">
+              <span id="start-time"></span>
+              <input type="hidden" id="slotstart">
+              <span> - </span>
+              <span id="end-time"></span>
+              <input type="hidden" id="slotend" value="">
+            </div>
+            <div id="time-slider"></div>
+            <button type="button" id="slotAdd" name="button">Add a slot</button>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Previous Slots</h3>
+          {{{slots}}}
+        </div>
+      </div>
+      <!-- Slots ends here -->
+
+      <div class="tab" id="services">
+        <h2>My Services</h2>
+        <div class="content">
+          <div class="card">
+            <div class="cardHead">Maruti Suzuki Swift Diesel</div>
+            <div class="closed">
+              <div class="cardInner">
+                <div class="service">
+                  General Service
+                </div>
+                <div class="price">
+                  1550
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardHead">Maruti Suzuki Swift Petrol</div>
+          <div class="closed">
+
+          </div>
+        </div>
+      </div>
+
+      <div id="analytics" class="tab">
+        <div class="chartFilter">
+          <input type="text" name="from" placeholder="From">
+          <input type="text" name="to" placeholder="To">
+          <div class="last">
+            <button type="button" name="week">This Week</button>
+            <button type="button" name="month">This Month</button>
+          </div>
+        </div>
+        <div class="chartHolder">
+          <canvas id="myAreaChart" width="100%" height="30"></canvas>
+        </div>
+      </div>
+      <!-- Analytics Ends here -->
+
+      <div class="tab" id="mkt">
+        <div class="boost">
+          <h2>Boost My Sale</h2>
+          <p>Info About Boost My Sale</p>
+          <form id="boostForm" class="form" method="post">
+            <label for="">message</label>
+            <textarea name="message"></textarea>
+            <label for="">Select the package</label>
+            <select name="pack">
+              <option value="50">50 messages for 30</option>
+              <option value="100">100 messages for 50</option>
+              <option value="200">200 messages for 90</option>
+              <option value="300">300 messages for 120</option>
+            </select><br>
+            <input type="submit" value="Submit Request">
+          </form>
+        </div>
+        <div class="boostapplications">
+          <h2>Boost applications status</h2>
+          <table>
+            <tr>
+              <th>Date</th>
+              <th>Message</th>
+              <th>Pack</th>
+              <th>Status</th>
+            </tr>
+            {{{boostreq}}}
+          </table>
+        </div>
+        <!-- <div class="prefer">
+          <h2>Prefer Me</h2>
+          <p>Info About Prefer me</p>
+          <form method="post">
+            <label for=""></label>
+          </form>
+        </div> -->
+      </div>
+      <!-- Marketing ends here -->
+
+      <div id="accounts" class="tab">
+        <h2>Balance: <span class="green">+500</span></h2>
+        <div class="rec">
+          <h3>Payment Receivable</h3>
+          <table>
+            <tr>
+              <th>Transaction Id</th>
+              <th>Amount</th>
+              <th>Reason</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>15425050525</td>
+              <td>500</td>
+              <td>Booking - 50075215</td>
+              <td>02/02/2018 - 12:00:58</td>
+            </tr>
+          </table>
+        </div>
+        <div class="pay">
+          <h3>Payment Payable</h3>
+          <table>
+            <tr>
+              <th>Transaction Id</th>
+              <th>Amount</th>
+              <th>Reason</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>15425050525</td>
+              <td>500</td>
+              <td>Booking - 50075215</td>
+              <td>02/02/2018 - 12:00:58</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Accounts ends here -->
+
+      <div id="reviews" class="tab">
+
+        <div class="rev">
+          <h2>Customer Reviews</h2>
+          <div class="revCardHolder">
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam.</p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia te</p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia</p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis laceu. </p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales dictum. Donec dignissim semper leo eu commodo. Fusce vitae tincidunt sem. Nam tempus porta turpis, in eleifend felis elementum ut. Integer elementum posuere felis a viverra. Curabitur vulputate, eros nec fringilla gravida, erat nulla blandit purus, id placerat mi nulla vitae leo. Morbi congue sollicitudin magna, eu tincidunt neque semper a. Aliquam tempor lacinia ipsum, a feugiat velit imperdiet eu. </p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales dictum. Donec dignissim semper leo eu commodo. Fusce vitae tincidunt sem. Nam tempus porta turpis, in eleifend felis elementum ut. Integer elementum posuere felis a viverra. Curabitur vulputate, eros nec fringilla gravida, erat nulla blandit purus, id placerat mi nulla vitae leo. Morbi congue sollicitudin magna, eu tincidunt neque semper a. Aliquam tempor lacinia ipsum, a feugiat velit imperdiet eu. </p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales dictum. Donec dignissim semper leo eu commodo. Fusce vitae tincidunt sem. Nam tempus porta turpis, in eleifend felis elementum ut. Integer elementum posuere felis a viverra. Curabitur vulputate, eros nec fringilla gravida, erat nulla blandit purus, id placerat mi nulla vitae leo. Morbi congue sollicitudin magna, eu tincidunt neque semper a. Aliquam tempor lacinia ipsum, a feugiat velit imperdiet eu. </p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+            <div class="revCard shdw2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales dictum. Donec dignissim semper leo eu commodo. Fusce vitae tincidunt sem. Nam tempus porta turpis, in eleifend felis elementum ut. Integer elementum posuere felis a viverra. Curabitur vulputate, eros nec fringilla gravida, erat nulla blandit purus, id placerat mi nulla vitae leo. Morbi congue sollicitudin magna, eu tincidunt neque semper a. Aliquam tempor lacinia ipsum, a feugiat velit imperdiet eu. </p>
+              <div class="dnt">
+                11:25AM 25/01/2018
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Reviews ends here -->
+
+      <div class="tab" id="profile">
+        <div class="card shdw2">
+          <h3>Profile Picture</h3>
+          <img class="pic" src="images/default.png" alt="Profile Pic">
+          <form id="picChange" method="post">
+            <div class="image-upload">
+              <label for="file-input">
+                <div style="background: #888; color: #fff; padding: 10px; text-align: center">
+                  Change Profile Picture
+                </div>
+              </label>
+              <input id="file-input" type="file"/>
+            </div>
+          </form>
+        </div>
+        <div class="card shdw2">
+          <h3>Personal Information</h3>
+          <form id="perInfoChange" method="post">
+            <label for="">Contact Number</label>
+            <input type="text" name="" value="">
+          </form>
+        </div>
+      </div>
+      <!-- Profile ends here -->
+
+      <div class="tab" id="notifications">
+        <h2>Notifications</h2>
+        <div class="cardHolder">
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Notifications ends here -->
+
+      <div class="tab" id="tips">
+        <h2>Tips</h2>
+        <div class="cardHolder">
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+          <div class="card shdw2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac tortor quis velit porttitor molestie ut gravida sem. Sed quis ipsum eget ligula vulputate eleifend. Aliquam sit amet sodales velit, vel porta quam. Vivamus interdum lectus sodales massa tempus, a feugiat felis fringilla. Pellentesque accumsan eget lacus eu sagittis. Nunc mi dolor, lacinia tempor dolor quis, malesuada convallis quam. Proin auctor sapien vel est iaculis lacinia. Quisque feugiat leo et sodales</p>
+            <div class="dnt">
+              11:25AM 25/01/2018
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tips ends here -->
+
+      <div class="tab" id="contact">
+
+      </div>
+      <!-- Comtact ends here -->
+
+    </section>
+
+    <script type="text/javascript">
+    [
+      './js/jquery.js',
+      './chart.js/Chart.min.js',
+      'js/nouislider.min.js',
+      'js/service.js',
+      'https://use.fontawesome.com/1fd731ec68.js',
+    ].forEach(function(src) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.async = false;
+      document.head.appendChild(script);
+    });
+    </script>
+  </body>
+</html>
+
+
+<!-- Traversy Media MongoDb -->

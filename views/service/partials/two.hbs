@@ -1,0 +1,10 @@
+<div id="two" class="active">
+  <h2>Select the vehicles for which you provide service</h2>
+  <form method="post" action="/register/two">
+    {{#cars fourwheeler}}{{/cars}}
+    {{#bikes twowheeler}}{{/bikes}}
+    <div class="button-container">
+      <button type="submit" class="button" name="button"><span>Next</span></button>
+    </div>
+  </form>
+</div>

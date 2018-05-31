@@ -1,0 +1,305 @@
+@import "var.scss";
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}
+header{
+  width: 100%;
+  height: 50px;
+  background: $blue;
+  position: fixed;
+  z-index: 100;
+  h1{
+    color: #fff;
+    font-size: 25px;
+    margin: 10px;
+    float: left;
+  }
+  a, button{
+    float: right;
+    margin: 13px;
+  }
+  button{
+    padding: 5px 10px;
+    border: 0;
+    background: #fff;
+    border-radius: 5px;
+  }
+  .phn{
+    color: #fff;
+    width: 25px;
+  }
+}
+h2{
+  color: $blue;
+  border-bottom: 3px solid $yellow;
+  padding: 3px;
+  margin: 10px;
+  font-size: 20px;
+  float: left;
+}
+.details{
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  float: left;
+  p, ul{
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  p{
+    padding: 0 13px;
+  }
+  ul{
+    padding: 0 20px;
+  }
+  form{
+    width: 100%;
+    float: left;
+    input{
+      width: 90%;
+      box-sizing: border-box;
+      padding: 5px;
+      margin: 10px 5%;
+    }
+  }
+  table{
+    width: 100%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    th{
+      text-align: left;
+    }
+    .total{
+      height: 50px;
+      font-weight: bold;
+    }
+  }
+  button{
+    width: 90%;
+    margin: 5%;
+    float: left;
+    box-sizing: border-box;
+    border: 0;
+    padding: 10px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 5px;
+    background: $yellow;
+    &.cancel{
+      color: #fff;
+      background: red;
+    }
+  }
+  .track{
+    width: 100%;
+    float: left;
+    .trackBar{
+      float: left;
+      margin: 20px 5%;
+      width: 90%;
+      position: relative;
+      height: 6px;
+      background: #ccc;
+      border-radius: 5px;
+    }
+    .trackball{
+      width: 10px;
+      position: absolute;
+      top: -3px;
+      left: 20%;
+      background: #fff;
+      height: 10px;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+    .complete{
+      width: 20%;
+      height: 6px;
+      background: green;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .legend{
+      list-style-type: none;
+      li{
+        width: 33%;
+        text-align: center;
+        float: left;
+      }
+    }
+  }
+}
+
+
+#chat{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 101;
+  background: #fff;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  visibility: hidden;
+  .head{
+    width: 100%;
+    height: 50px;
+    background: $blue;
+  }
+  #close{
+    float: left;
+    color: #fff;
+    font-weight: bolder;
+    padding: 15px;
+    cursor: pointer;
+  }
+  h2{
+    color: #fff;
+    margin: 10px 0;
+    border: 0;
+    font-size: 18px;
+  }
+  .send{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    background: #ddd;
+    img{
+      width: 30px;
+    }
+    input{
+      width: 96%;
+      margin: 5px 2%;
+      box-sizing: border-box;
+      padding: 10px 80px 10px 10px;
+      border-radius: 20px;
+      border: 1px solid #888;
+      outline: 0;
+    }
+    .imgBtncontainer, .submitContainer{
+      background: transparent url("../images/img.png") left top no-repeat;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: 8px;
+      right: 50px;
+      background-size: contain;
+    }
+    #imgInput, .submitContainer input{
+      position: absolute;
+      background: transparent url("../images/img.png") left top no-repeat;
+      opacity: 0;
+    }
+    .submitContainer{
+      background: transparent url("../images/send.png") left top no-repeat;
+      right: 11px;
+      background-size: contain;
+    }
+    .submitContainer input{
+      background: transparent url("../images/send.png") left top no-repeat;
+    }
+  }
+  .msgContainer{
+    background: #f1f1f1;
+    position: absolute;
+    top: 50px;
+    overflow-y: auto;
+    bottom: 50px;
+    width: 100%;
+    .msg{
+      width: 100%;
+      padding: 10px;
+      float: left;
+      box-sizing: border-box;
+    }
+    .msgBox{
+      min-height: 30px;
+      width: 90%;
+      border-radius: 5px;
+      p{
+        padding: 5px;
+      }
+      &.msg-in{
+        background: #fff;
+        float: left;
+      }
+      &.msg-out{
+        background: #b7deb7;
+        float: right;
+      }
+    }
+  }
+  &.active{
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+  }
+  &.deactivated{
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+  }
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}

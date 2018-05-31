@@ -1,0 +1,160 @@
+.shdw5 {
+  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3); }
+
+.shdw4 {
+  -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); }
+
+.shdw3 {
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3); }
+
+.shdw2 {
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); }
+
+.shdw1 {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Exo 2', sans-serif; }
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #0091AA;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0091AA), to(#11dcff));
+  background-image: -webkit-linear-gradient(#0091AA, #11dcff);
+  background-image: -o-linear-gradient(#0091AA, #11dcff);
+  background-image: linear-gradient(#0091AA, #11dcff); }
+
+.formContainer {
+  width: 500px;
+  height: 350px;
+  background: #fff;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+  top: 50px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #333; }
+
+form {
+  width: 250px;
+  margin: auto;
+  padding: 20px; }
+
+input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 5px 0;
+  border: 1px solid #aaa;
+  padding: 5px 10px 5px 30px;
+  font-size: 18px;
+  border-radius: 5px; }
+
+input:active, input:focus {
+  -webkit-box-shadow: 0 0 3px #0091AA;
+  box-shadow: 0 0 3px #0091AA; }
+
+button {
+  width: 100%;
+  border: 0;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  margin-top: 20px;
+  background: #007b91;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 20px; }
+
+.icon {
+  position: relative;
+  top: 30px;
+  left: 10px;
+  color: #888; }
+
+a {
+  float: left;
+  margin-top: 10px; }
+
+.msg {
+  font-size: 18px;
+  padding: 50px;
+  text-align: center; }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+.lds-dual-ring {
+  width: 64px;
+  height: 64px;
+  display: none;
+  margin: auto; }
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin-top: 30px;
+  border-radius: 50%;
+  border: 5px solid #888;
+  border-color: #888 transparent #888 transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+  animation: lds-dual-ring 1.2s linear infinite; }
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@media only screen and (max-width: 540px) {
+  .formContainer {
+    width: 100%; } }

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <title>Contact Us | Autoking</title>
+    <style media="screen">
+      .contact{
+        width: 50%;
+        float: left;
+      }
+      .mobHead{
+        z-index: 100;
+      }
+      .card{
+        width: 80%;
+        margin: 10%;
+        height: 350px;
+        background: #fff;
+      }
+      h1{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        color: #fff;
+        font-size: 40px;
+        position: relative;
+        top: 30px;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+      #banner form {
+  width: 80%;
+  margin: 0 10%;
+  overflow: hidden;
+  padding-top: 50px; }
+  #banner form input, #banner form textarea {
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 15px 0px #333; }
+    #banner form textarea{
+      height: 200px;
+      width: 100%;
+      resize: none;
+    }
+  #banner form input[type=submit] {
+    background: #0063A2;
+    color: #fff;
+    font-weight: 400;
+    transition: 100ms;
+    cursor: pointer; }
+  #banner form input[type=submit]:hover {
+    background: #088eca; }
+    .info{
+      width: 100%;
+      float: left;
+      padding: 32px 10px;
+      box-sizing: border-box;
+    }
+    .icon{
+      color: #0063A2;
+      float: left;
+      padding: 10px 30px;
+    }
+    @media only screen and (max-width: 767px) {
+      body{
+        /*over*/
+      }
+      .icon{
+        padding: 0;
+      }
+      .contact{
+        width: 100%;
+      }
+      #banner{
+        height: 1080px;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="pcHead">
+        <a href="/"><img src="images/logo.png" id="logo" alt="Auto King"></a>
+        <div id="logoCt"></div>
+        <div id="a" class="shdw3"></div>
+        <div id="b" class="shdw3"></div>
+        <div id="menu" class="shdw3">
+          <div class="upper">
+            <input type="text" class="shdw2" name="q" placeholder="Search nearest center">
+            <div class="loginCart">
+              {{{loggedIn}}}
+            </div>
+          </div>
+          <div class="lower">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/book">Book</a></li>
+              <li><a href="/rsa">Roadside Assistance</a></li>
+              <li><a href="https://service.autoking.in/register">Become a partner</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/contact">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="menuBtn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- PC head ends here -->
+
+      <div class="mobHead">
+        <div class="menuBtn">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="logo">
+          <a href="/"><img src="images/logo.png" alt="Auto King"></a>
+        </div>
+        <div class="vline"></div>
+        <div class="search">
+          <i class="fa fa-search fa-lg"></i>
+        </div>
+        <div class="vline"></div>
+        <a href="login.html" class="lgn">Login & Signup</a>
+      </div>
+
+      <!-- Mob head ends here  -->
+    </header>
+
+    <div id="filterSideNav"></div>
+    <section id="sideNav">
+
+      <div class="userArea">
+        <div class="userImg">
+          <img src="images/default.png" alt="User">
+        </div>
+        <div class="email">
+          default@autoking.in
+        </div>
+      </div>
+      <div class="container">
+        <ul>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/">Home</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/book">Book a service</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/rsa">Roadside Assistance</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/about">About Us</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="/contact">Contact Us</a></li>
+          <li><i class="fa fa-car fa-lg icon"></i><a href="https://service.autoking.in">Become a partner</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- Side nav ends here  -->
+
+    <section id="banner">
+      <div class="filter">
+        <div class="contactForm contact">
+          <h1>Get in touch</h1>
+          <form method="post" id="cntfrm">
+            <input type="text" name="email" placeholder="Email">
+            <input type="tel" name="contact" placeholder="Contact Number">
+            <textarea name="msg" placeholder="Type your message here"></textarea>
+            <input type="submit" value="Submit Query">
+          </form>
+        </div>
+        <div class="contactInfo contact">
+          <h1>Reach Out to Us</h1>
+          <div class="card shdw2">
+            <div class="info">
+              <i class="fa fa-fw fa-location-arrow fa-2x icon"></i>
+              <h2>Location</h2>
+              <p>Office address</p>
+            </div>
+            <div class="info">
+              <i class="fa fa-fw fa-phone fa-2x icon"></i>
+              <h2>Contact Number</h2>
+              <p>+91-9819096582</p>
+            </div>
+            <div class="info">
+              <i class="fa fa-fw fa-envelope-open fa-2x icon"></i>
+              <h2>Write to us</h2>
+              <a href="mailto:contact@autoking.in">contact@autoking.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+[
+  'js/jquery.js',
+  'https://use.fontawesome.com/1fd731ec68.js',
+  'js/main.js',
+].forEach(function(src) {
+  var script = document.createElement('script');
+  script.src = src;
+  script.async = false;
+  document.head.appendChild(script);
+});
+</script>
+  </body>
+</html>
