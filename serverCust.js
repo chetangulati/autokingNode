@@ -226,18 +226,19 @@ app.get('/profile', authenticate, (req, res) => {
 });
 
 app.get('/list', authenticate, async (req, res) => {
-  if(!req.query.vehicleType){
-    res.redirect('/book');
-    // ServiceProvider.find({""})
-  }
-  else{
-    if (req.query.vehicleType == "4") {
-      var vehicle = req.query.brand+"_"+req.query.model+"_"+req.query.fuel;
+  if (!req.query.type) {
+    if(!req.query.vehicleType){
+      res.redirect('/book');
+      // ServiceProvider.find({""})
     }
-    else if (req.query.vehicleType == "2") {
-      var vehicle = req.query.brand+"_"+req.query.model;
-    }
-    try {
+    else{
+      if (req.query.vehicleType == "4") {
+        var vehicle = req.query.brand+"_"+req.query.model+"_"+req.query.fuel;
+      }
+      else if (req.query.vehicleType == "2") {
+        var vehicle = req.query.brand+"_"+req.query.model;
+      }
+      try {
         const sp = await ServiceProvider.find({$and: [{"vehicles.name":{$regex: '^'+vehicle, $options: 'i'}},{'vacation': false}]});
         var spList = "";
         for (var i = 0; i < sp.length; i++) {
@@ -256,8 +257,34 @@ app.get('/list', authenticate, async (req, res) => {
           spList+=`<a href="/serviceprovider?sp=${sp[i]._id}&vehicleType=${req.query.vehicleType}&brand=${req.query.brand}&model=${req.query.model}&fuel=${req.query.fuel}&lat=${req.query.lat}&lng=${req.query.lng}${serv}"><div class="card shdw1"><img src="${sp[i].profileImg}" alt="${sp[i].owner}"><div class="info"><h2>${sp[i].owner}</h2><p>${sp[i].address}</p><div class="rating"><div class="greystars"></div><div class="filledstars" style="width:${Rating}%"></div></div></div></div></a>`;
         }
         res.render('customer/list.hbs', {spList: spList});
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+  else {
+    var veh = req.query.type;
+    var rsa = req.query.rsa;
+    try {
+      const sp = await ServiceProvider.find({$and: [{"rsa": true},{'vacation': false}]});
+      for (var i = 0; i < sp.length; i++) {
+        const rat = await Ratnrev.find({serviceProvider: sp[i]._id});
+        var sprating = 0;
+        var count = 1;
+        for (var j = 0; j < rat.length; j++) {
+          sprating += rat[rating];
+          count++;
+        }
+        var serv ="";
+        for (var k = 0; k< req.query.service.length; k++) {
+          serv += `&service=${req.query.service[k]}`;
+        }
+        var Rating = ((sprating/count)/5)*100;
+        spList+=`<a href="/serviceprovider?sp=${sp[i]._id}&vehicleType=${req.query.vehicleType}&brand=${req.query.brand}&model=${req.query.model}&fuel=${req.query.fuel}&lat=${req.query.lat}&lng=${req.query.lng}${serv}"><div class="card shdw1"><img src="${sp[i].profileImg}" alt="${sp[i].owner}"><div class="info"><h2>${sp[i].owner}</h2><p>${sp[i].address}</p><div class="rating"><div class="greystars"></div><div class="filledstars" style="width:${Rating}%"></div></div></div></div></a>`;
+      }
+      res.render('customer/list.hbs', {spList: spList});
     } catch (e) {
-      console.log(e);
+      console.log(e);      
     }
   }
 });
